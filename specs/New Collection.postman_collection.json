@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "51b42e86-1b4c-49a8-a228-b9142dcabedc",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27277274",
+		"_collection_link": "https://d11111-7446.postman.co/workspace/7726d4b3-3187-4dd1-b73f-31d36ea952df/collection/27277274-51b42e86-1b4c-49a8-a228-b9142dcabedc?action=share&source=collection_link&creator=27277274"
+	},
+	"item": [
+		{
+			"name": "tạo user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"HauHau\",\r\n    \"displayName\": \"Nguyen Hau\",\r\n    \"avatarUrl\": \"http/1/2/3/4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/users",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/users/83dd3d6d-b579-4b95-a8d5-0ea6fe19f742",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"83dd3d6d-b579-4b95-a8d5-0ea6fe19f742"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list ngày điểm danh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/attendance/users/f135502e-8fbb-4c1e-ab36-8ea3d97e8799/history",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"attendance",
+						"users",
+						"f135502e-8fbb-4c1e-ab36-8ea3d97e8799",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "điểm danh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/attendance/users/f135502e-8fbb-4c1e-ab36-8ea3d97e8799/mark",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"attendance",
+						"users",
+						"f135502e-8fbb-4c1e-ab36-8ea3d97e8799",
+						"mark"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lịch sử cộng điểm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/points/users/f135502e-8fbb-4c1e-ab36-8ea3d97e8799/history",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"points",
+						"users",
+						"f135502e-8fbb-4c1e-ab36-8ea3d97e8799",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trừ điểm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"points\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{your-endpoint}}/api/v1/points/users/f135502e-8fbb-4c1e-ab36-8ea3d97e8799/deduct",
+					"host": [
+						"{{your-endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"points",
+						"users",
+						"f135502e-8fbb-4c1e-ab36-8ea3d97e8799",
+						"deduct"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "your-endpoint",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

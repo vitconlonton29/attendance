@@ -3,12 +3,13 @@ package org.example.attendance.exception.base;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 @Data
-public class BaseException extends RuntimeException {
+public class BaseException extends RuntimeException implements Serializable {
   private String message;
   private String code;
   private int status;

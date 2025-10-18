@@ -96,9 +96,7 @@ public class AttendanceService {
         LocalTime now = LocalTime.now();
 
         if (!isWithinAttendanceTime(now)) {
-            throw new BadRequestException(
-                    AttendanceConstant.ErrorCode.ATTENDANCE_TIME_INVALID
-            );
+            throw new BadRequestException(AttendanceConstant.ErrorCode.ATTENDANCE_TIME_INVALID);
         }
 
         if (attendanceRecordRepository.existsByUserIdAndAttendanceDate(userId, today)) {
@@ -197,7 +195,7 @@ public class AttendanceService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException("User", userId));
 
-        Pageable pageable =  PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(page, size);
         Page<AttendanceRecord> recordsPage;
 
         // Nếu không có startDate và endDate, mặc định lấy tháng hiện tại
@@ -214,8 +212,7 @@ public class AttendanceService {
         }
 
 
-            recordsPage = attendanceRecordRepository.findByUserIdAndDateRange(userId, startDate, endDate, pageable);
-
+        recordsPage = attendanceRecordRepository.findByUserIdAndDateRange(userId, startDate, endDate, pageable);
 
 
         List<AttendanceHistoryResponse.AttendanceRecordDTO> recordDTOs = recordsPage.getContent().stream()

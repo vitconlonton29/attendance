@@ -7,9 +7,11 @@ public class BadRequestException extends BaseException {
   public BadRequestException() {
     setCode("BadRequestException");
     setStatus(BAD_REQUEST);
+    setMessage("Bad Request");
   }
     public BadRequestException(String message) {
-        setCode("message");
+        setCode(message);
         setStatus(BAD_REQUEST);
+        setMessage(message);
     }
 }
